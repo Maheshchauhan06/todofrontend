@@ -1,0 +1,41 @@
+body {
+  background-color: #769494;
+}
+
+.createNotes-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.footer-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15rem;
+}
+
+.notes-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputarea:focus {
+  outline: none;
+}
+
+.textarea:focus {
+  outline: none;
+}
+
+.button-style {
+  /* position: relative;
+    right: 2.5rem;
+    bottom: 1rem; */
+  background-color: #e6ded3;
+  border: none;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
