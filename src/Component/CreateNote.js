@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import "./style.css";
 
-function CreateNote(props) {
+function CreateNote({ setrefresh, refresh }) {
   const [note, setNote] = useState({
     title: "",
     content: "",
@@ -20,7 +20,7 @@ function CreateNote(props) {
 
   const addEvent = (e) => {
     e.preventDefault();
-    console.log(note.content);
+    setrefresh(refresh + 1);
     axios
       .post("http://localhost:3001/api/insert", {
         title: note.title,
@@ -32,12 +32,10 @@ function CreateNote(props) {
           content: "",
         });
       })
-      .catch((err) => console.log(err))
       .catch((err) => {
         console.error(err);
         alert("Error adding note");
       });
-    props.setrefresh(props.refresh + 1);
   };
 
   return (

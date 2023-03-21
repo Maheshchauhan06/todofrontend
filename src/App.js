@@ -27,9 +27,9 @@ function App() {
             <Notes
               setrefresh={setrefresh}
               refresh={refresh}
-              id={ele.id}
+              id={ele._id}
               title={ele.title}
-              content={ele.input}
+              content={ele.content}
             />
           );
         })}

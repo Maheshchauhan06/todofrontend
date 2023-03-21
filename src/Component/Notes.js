@@ -2,17 +2,18 @@ import React from "react";
 import Card from "react-bootstrap/Card";
 import axios from "axios";
 
-function Notes(props) {
+function Notes({ setrefresh, refresh, id, title, content }) {
   const deleteNotes = () => {
-    axios.delete(`http://localhost:3001/api/delete/${props.id}`);
-    props.setrefresh(props.refresh + 1);
+    axios.delete(`http://localhost:3001/api/delete/${id}`);
+    setrefresh(refresh + 1);
+    console.log(refresh);
   };
 
   return (
     <div style={{ display: "flex", flexWrap: "wrap", margin: "10px" }}>
-      <Card key={props.key}>
+      <Card key={id}>
         <Card.Body style={{ backgroundColor: "#E6DED3" }}>
-          <Card.Title>{props.title}</Card.Title>
+          <Card.Title>{title}</Card.Title>
           <Card.Text
             style={{
               whiteSpace: "pre-wrap",
@@ -20,7 +21,7 @@ function Notes(props) {
               width: "200px",
             }}
           >
-            {props.content}
+            {content}
           </Card.Text>
           <Card.Subtitle className="mb-2 text-muted"> </Card.Subtitle>
           <svg
