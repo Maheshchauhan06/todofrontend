@@ -20,7 +20,6 @@ function CreateNote({ setrefresh, refresh }) {
 
   const addEvent = (e) => {
     e.preventDefault();
-    setrefresh(refresh + 1);
     axios
       .post("http://localhost:3001/api/insert", {
         title: note.title,
@@ -31,6 +30,7 @@ function CreateNote({ setrefresh, refresh }) {
           title: "",
           content: "",
         });
+        setrefresh(refresh + 1);
       })
       .catch((err) => {
         console.error(err);
